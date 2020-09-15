@@ -1,5 +1,7 @@
 # ENEM 2019: Regressão da nota de Matemática
 Esse é um projeto completo de data science: da obtenção dos dados até o deploy do modelo. É meu primeiro projeto start-to-end.
+
+Nessa página você encontra um resumo do projeto. A versão completa está no arquivo [enem-2019.ipynb](enem-2019.ipynb).
 ## Resumo do Projeto
 * Objetivo: criar um modelo de previsão da nota da prova de Matemática do ENEM a partir de dados socioeconômicos do candidato (RMSE final ~ 93 pontos).
 * Dados coletados no portal do [INEP](http://inep.gov.br/microdados).
