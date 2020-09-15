@@ -5,7 +5,7 @@ Esse é um projeto completo de data science: da obtenção dos dados até o depl
 * Dados coletados no portal do [INEP](http://inep.gov.br/microdados).
 * Análise exploratória de dados mostrou que a renda é o fator mais relevante para a previsão da nota.
 * Feature engineering: criei duas features novas: uma que indica a renda per capita (por residente no domicílio) do candidato e outra que indica a escolaridade máxima entre pai e mãe.
-* Bench mark model com XGBoost e LightGBM para análise de importâncias relativas entre features e feature selection.
+* Benchmark model com XGBoost e LightGBM para análise de importâncias relativas entre features e feature selection.
 * Refinamento do modelo: procura por hiperparâmetros ótimos usando bayesian search.
 * Interpretação do modelo: expliquei quais são as decisões que o modelo faz para chegar a uma previsão. Para isso, usei valores SHAP.
 * Deploy serverless do modelo no [AWS Lambda](https://aws.amazon.com/lambda/) e criação de um [bot do Telegram](https://telegram.org/blog/bot-revolution) que permite que qualquer pessoa faça a previsão da sua nota no ENEM usando nosso modelo.
@@ -42,3 +42,13 @@ Analisei as distribuições dos dados e suas relações com a variável dependen
 
 ## Benchmark e feature selection
 Treinei dois modelos com hiperparâmetros default: um xgboost e um lightgbm, que apresentaram RMSE similares (~93 no conjunto de validação). A partir desses dois modelos, analisei as feature importances e discuti inconsistências existentes quando mudamos o critério para determinação das feature importances. A solução foi usar a média dos módulos dos valores SHAP para definir que features eram mais importantes. A partir desse resultado, realizei a feature selection. O model final acabou ficando com apenas 5 features.
+
+## Refinamento do modelo
+Decidi continuar a modelagem apenas com o lighgbm. Isso porque apresentou um benchmark muito parecido com o xgboost, é treinado mais rapidamente e evitaria [problemas](https://medium.com/@AlexeyButyrev/xgboost-on-aws-lambda-345f1394c2b) no deploy no AWS Lambda.
+
+Utilizei a técnica de busca bayesiana para procurar os hiperparâmetros ótimos, com a implementação do pacote [hyperopt](https://github.com/hyperopt/hyperopt).
+
+O modelo final mostrou RMSE de ~ 93 pontos no conjunto de teste (pontos nunca vistos antes pelo modelo, nem como validação).
+
+## Interpretação do moelo
+Para explicar quais são as decisões que o modelo toma para chegar às previsões, utilizei os valores SHAP, com a implementação da biblioteca [shap](https://github.com/slundberg/shap).
