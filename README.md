@@ -10,7 +10,7 @@ Esse é um projeto completo de data science: da obtenção dos dados até o depl
 * Interpretação do modelo: expliquei quais são as decisões que o modelo faz para chegar a uma previsão. Para isso, usei valores SHAP.
 * Deploy serverless do modelo no [AWS Lambda](https://aws.amazon.com/lambda/) e criação de um [bot do Telegram](https://telegram.org/blog/bot-revolution) que permite que qualquer pessoa faça a previsão da sua nota no ENEM usando nosso modelo.
 
-## Recursos usados
+## Recursos utilizados
 **Python**: Versão 3.7<br>
 **Pacotes Python**: numpy, pandas, matplotlib, seaborn, xgboost, lightgbm, hyperopt, joblib, shap<br>
 **Serverless framework**: https://www.serverless.com/<br>
