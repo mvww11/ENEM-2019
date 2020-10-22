@@ -1,5 +1,5 @@
 # ENEM 2019: Regressão da nota de Matemática
-Esse é um projeto completo de data science: da obtenção dos dados até o deploy do modelo. É meu primeiro projeto start-to-end.
+Esse é meu primeiro projeto end-to-end de data science: da obtenção dos dados até o deploy do modelo. Inclui obtenção dos dados, tratamento de missing data, análise exploratória de dados, modelagem, otimização dos hiperparâmetros, explicabilidade, deploy do modelo no AWS Lambda e criação de um Bot do Telegram para que qualquer pessoa faça a previsão da sua nota.
 
 Nessa página você encontra um resumo do projeto. A versão completa está no arquivo [enem-2019.ipynb](enem-2019.ipynb).
 ## Resumo do Projeto
